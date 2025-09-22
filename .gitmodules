@@ -1,0 +1,6 @@
+[submodule "wazuh/config/wazuh-docker"]
+	path = wazuh/config/wazuh-docker
+	url = https://github.com/wazuh/wazuh-docker
+[submodule "shuffle/Shuffle"]
+	path = shuffle/Shuffle
+	url = https://github.com/Shuffle/Shuffle
