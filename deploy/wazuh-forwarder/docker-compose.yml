@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  forwarder:
+    build: .
+    container_name: wazuh-forwarder
+    environment:
+      - WAZUH_API=http://single-node-wazuh.manager-1:55000
+      - WAZUH_USER=wazuh
+      - WAZUH_PASS=wazuh
+      - SHUFFLE_WEBHOOK=
+      - POLL_INTERVAL=10
+    env_file:
+      - .env
+    networks:
+      - siem-net
+    restart: unless-stopped
+
+networks:
+  siem-net:
+    external: true
